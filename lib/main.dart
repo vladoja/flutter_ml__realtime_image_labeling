@@ -123,12 +123,14 @@ class _MyHomePageState extends State<_MyHomePage> {
       final String text = label.label;
       final int index = label.index;
       final double confidence = label.confidence;
-      result += text + "    " + confidence.toStringAsFixed(2) + "\n";
+      result += "$text    ${confidence.toStringAsFixed(2)}\n";
     }
     // Ready for next image
     setState(() {
       result;
     });
+    // await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(milliseconds: 500));
     // isBusy = false;
     _isDetecting = false;
   }
