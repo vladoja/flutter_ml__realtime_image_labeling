@@ -109,7 +109,7 @@ class _MyHomePageState extends State<_MyHomePage> {
   }
 
   Future<void> doImageLabeling(CameraImage image) async {
-    print("Running doImageLabeling()");
+    // print("Running doImageLabeling()");
     result = "";
     InputImage inputImage = _inputImageFromCameraImage(image)!;
 
@@ -118,7 +118,7 @@ class _MyHomePageState extends State<_MyHomePage> {
     final List<ImageLabel> labels = await imageLabeler.processImage(inputImage);
 
     result = "";
-    print("New Labels: " + labels.length.toStringAsPrecision(2));
+    // print("New Labels: " + labels.length.toStringAsPrecision(2));
     for (ImageLabel label in labels) {
       final String text = label.label;
       final int index = label.index;
